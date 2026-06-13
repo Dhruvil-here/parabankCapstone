@@ -1,40 +1,35 @@
-# ParaBank Automation Testing Capstone Project
+# Parabank Automation Testing Project
 
 ## Project Overview
 
-This project was developed as part of the Capgemini QA Automation Capstone Assessment.
+This project is an automation testing framework developed using Playwright and TypeScript for the Parabank application.
 
-The application under test is ParaBank. The project includes UI Automation, API Testing, Hybrid Testing, and Performance Testing using Playwright with TypeScript.
+The framework covers UI testing, API testing, Hybrid testing, Negative testing, and basic Performance testing. Page Object Model (POM) design pattern is used to improve code maintainability and reusability.
 
-The framework follows the Page Object Model (POM) design pattern to improve code reusability and maintainability.
+---
 
-## Tools and Technologies Used
+## Tools and Technologies
 
 * Playwright
 * TypeScript
 * Node.js
-* Visual Studio Code
 * Git & GitHub
+* GitHub Actions
+* Allure Report
+* Playwright HTML Report
 
-## Framework Design
+---
 
-The framework is designed using the Page Object Model (POM).
+## Framework Structure
 
-Main Components:
+## Framework Structure
 
-* Page Classes
-* UI Test Cases
-* API Test Cases
-* Hybrid Test Cases
-* Performance Test Cases
-
-## Project Structure
-
+```text
 parabankCapstone
 │
 ├── pages
-│   ├── registerPage.ts
 │   ├── loginPage.ts
+│   ├── registerPage.ts
 │   ├── openAccountPage.ts
 │   ├── transferFundsPage.ts
 │   └── accountsOverviewPage.ts
@@ -42,59 +37,81 @@ parabankCapstone
 ├── tests
 │   ├── UI
 │   ├── API
-│   ├── Hybrid
+│   ├── hybrid
 │   └── performanceLite
 │
+├── documents
 ├── screenshots
+├── .github/workflows
 ├── playwright.config.ts
 ├── package.json
 └── README.md
+```
+
+---
 
 ## Test Coverage
 
-### UI Test Cases
+### UI Tests
 
-* User Registration
-* User Login
-* Open Savings Account
-* Open Checking Account
-* Transfer Funds
-* Verify Transfer Confirmation
-* Verify Account Balance Updates
+* Register new user
+* User login
+* Create savings account
+* Create checking account
+* Transfer funds
+* Verify transfer confirmation message
+* Verify source account balance update
+* Verify destination account balance update
+* Verify invalid login
+* Transfer funds without amount
 
-### API Test Cases
+### API Tests
 
-* Verify Account Exists
-* Verify Account Type
-* Verify Account Balance
-* Verify Invalid Account Request
+* Verify account exists in API
+* Verify account type in API
+* Verify account balance in API
+* Verify invalid account API request
 
-### Hybrid Test Cases
+### Hybrid Tests
 
-* Create Account via UI and Validate via API
-* Transfer Funds via UI and Validate via API
-* Verify Balance Difference After Transfer
+* Create account via UI and validate via API
+* Transfer funds via UI and validate via API
+* Verify balance difference after transfer
 
-### Performance Test Cases
+### Performance Tests
 
-* Verify API Response Time
-* Verify 20 Concurrent API Requests
+* Verify API response time
+* Verify 20 concurrent API requests
 
-## Functional Requirements Covered
+---
 
-* FR-01 Create New Account
-* FR-02 Retrieve Account Information
-* FR-03 Validate Account Existence
-* FR-04 Validate Account Details
-* FR-05 Transfer Funds
-* FR-06 Validate Updated Balances
-* FR-07 Validate Balance Difference
-* FR-08 Verify Success Messages
-* FR-09 Verify Negative Scenarios
+## Test Execution Summary
 
-## How to Install
+| Test Type   | Count |
+| ----------- | ----- |
+| UI          | 9     |
+| API         | 4     |
+| Hybrid      | 3     |
+| Performance | 2     |
+| Total       | 18    |
 
-Install project dependencies:
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Dhruvil-here/parabankCapstone.git
+```
+
+Move to project directory:
+
+```bash
+cd parabankCapstone
+```
+
+Install dependencies:
 
 ```bash
 npm install
@@ -106,55 +123,93 @@ Install Playwright browsers:
 npx playwright install
 ```
 
-## How to Execute Tests
+---
 
-Run all tests:
+## Run Tests
+
+Run complete test suite:
 
 ```bash
 npx playwright test
 ```
 
-Run UI Tests:
+Run UI tests:
 
 ```bash
 npx playwright test tests/UI
 ```
 
-Run API Tests:
+Run API tests:
 
 ```bash
 npx playwright test tests/API
 ```
 
-Run Hybrid Tests:
+Run Hybrid tests:
 
 ```bash
-npx playwright test tests/Hybrid
+npx playwright test tests/hybrid
 ```
 
-Run Performance Tests:
+Run Performance tests:
 
 ```bash
 npx playwright test tests/performanceLite
 ```
 
-## Reports
+---
 
-Generate Playwright HTML Report:
+## Playwright HTML Report
+
+Generate and open Playwright report:
 
 ```bash
 npx playwright show-report
 ```
 
-## Challenges Faced
+---
 
-* Dynamic account IDs generated during execution
-* ParaBank environment resets causing old account IDs to become invalid
-* Invalid login scenarios displaying internal error messages
-* Handling API validations using dynamically created accounts
+## Allure Report
+
+Generate Allure report:
+
+```bash
+npx allure generate ./allure-results --clean
+```
+
+Open Allure report:
+
+```bash
+npx allure open
+```
+
+---
+
+## CI/CD Integration
+
+GitHub Actions is configured to automatically execute API and Hybrid test suites whenever code is pushed to the repository.
+
+Workflow file:
+
+```text
+.github/workflows/playwright.yml
+```
+
+---
+
+## Documents Included
+
+* Test Scenarios
+* Test Cases
+* RTM (Requirement Traceability Matrix)
+* Test Execution Screenshots
+* Allure Report Screenshots
+* GitHub Actions Screenshots
+
+---
 
 ## Author
 
 Dhruvil Gautam
 
-Capgemini QA Automation Capstone Project
+Capgemini Automation Testing Capstone Project
