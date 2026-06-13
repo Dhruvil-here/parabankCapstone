@@ -1,3 +1,0 @@
-Created Account: 18672
-20 Requests Completed In: 401 ms
-Successful Requests: 20

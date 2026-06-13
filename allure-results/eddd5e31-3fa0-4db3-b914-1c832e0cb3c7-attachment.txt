@@ -1,2 +1,0 @@
-Created Account ID: 16674
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><account><id>16674</id><customerId>13655</customerId><type>SAVINGS</type><balance>100.00</balance></account>

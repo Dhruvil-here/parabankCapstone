@@ -1,0 +1,2 @@
+Created Account ID: 30993
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><account><id>30993</id><customerId>21869</customerId><type>SAVINGS</type><balance>100.00</balance></account>

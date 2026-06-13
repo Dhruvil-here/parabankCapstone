@@ -1,8 +1,0 @@
-Savings Account: 17784
-Checking Account: 17895
-Source Before: 100
-Destination Before: 100
-From Account: 17784
-To Account: 17895
-Source After: 90
-Destination After: 110
